@@ -1,0 +1,45 @@
+{% extends 'basic1.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'base/home.css' %}">
+<title>Home</title>
+{% endblock title %}
+
+{% block content %}
+
+<h1>Home</h1>
+
+<div class="quote">
+  <div class="container">
+    <p class="quote_verse">Verse of the day will appear here</p>
+    <p class="quote_source">- API perhaps?</p>
+
+  </div>
+</div>
+
+<div class="activity_zone">
+  <div class="container">
+    <div class="activity_area">
+      When you join one of the below, this area becomes active with what you've been doing
+    </div>
+  </div>
+</div>
+
+<div class="choice_zone">
+  <div class="container">
+    <div class="choice_area">
+      <a href="" class="choice_place">Bible - where you read the bible</a>
+      <a href="" class="choice_place">Form - where you ask and answer questions</a>
+      <a href="" class="choice_place">Goals - biblical Goals</a>
+      <a href="" class="choice_place">Videos - Videos (either sermons, soulwinning, tips, living righteous life, etc.)</a>
+      <a href="" class="choice_place">Groups - create a group and achieve together (either reading, watching sermons, memorizing verses, etc)</a>
+      <a href="" class="choice_place">triva - test your knowledge</a>
+      <a href="" class="choice_place">Todo list - list the things you want to do</a>
+      <a href="" class="choice_place">Events - where and when (even patitions for future events)</a>
+      <a href="" class="choice_place">Near daily blog</a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

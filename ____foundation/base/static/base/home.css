@@ -1,0 +1,73 @@
+h1 {
+  text-align: center;
+}
+
+/* Quote ##################### */
+
+.quote {
+  text-align: center;
+  width: 90%;
+  padding: 2rem 0;
+}
+
+.quote_verse {
+  font-style: italic;
+}
+
+.quote_source {
+  text-align: right;
+}
+
+/* activity ##################### */
+
+.activity_zone {
+  padding-bottom: 4rem;
+}
+
+
+/* choice ########################## */
+.choice_area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.choice_place {
+  flex-basis: 33.333%;
+  height: 10rem;
+  background-color: var(--bg3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  transition: border-radius 1s ease;
+}
+
+.choice_place:link,
+.choice_place:visited {
+  color: #000;
+}
+
+.choice_place:hover {
+  background-color: var(--bg1);
+  color: var(--link-h);
+  border-radius: 2rem;
+}
+
+.choice_place:active {
+  background-color: var(--bg2);
+}
+
+.choice_place:first-child {
+  border-top-left-radius: 2rem;
+}
+.choice_place:nth-child(3) {
+  border-top-right-radius: 2rem;
+}
+.choice_place:nth-child(7) {
+  border-bottom-left-radius: 2rem;
+}
+.choice_place:last-child {
+  border-bottom-right-radius: 2rem;
+}
