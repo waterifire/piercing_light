@@ -1,0 +1,45 @@
+h1 {
+  text-align: center;
+}
+
+.goal_area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.list_goals {
+  flex-basis: 20%;
+}
+
+.calendar {
+  flex-basis: 60%;
+}
+
+.list_friends {
+  flex-basis: 20%;
+}
+
+/* list_goals ################# */
+.list_goals {
+  border: 1px solid #000;
+}
+
+.goals_title {
+  display: flex;
+  flex-direction column;
+  justify-content: space-around;
+  font-weight: 600;
+}
+
+.goals {
+  padding: 0 2rem;
+}
+
+.goals:nth-child(2n+1) {
+  background: var(--bg3);
+}
+
+.goals:nth-child(2n+2) {
+  background: var(--bg2);
+}
