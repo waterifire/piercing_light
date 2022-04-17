@@ -24,13 +24,43 @@
         </div>
         <div class="goals_user">
           {% for goal in goals %}
-            <p class="goals">{{goal}}</p>
+            <p class="goals">
+              <a href="{% url 'goals_edit' goal.id %}">
+                {{goal}}
+              </a>
+            </p>
           {% endfor %}
         </div>
       </div>
 
       <div class="calendar">
         <p>Calender with list of all goals on it</p>
+
+        <div class="calendar_container">
+          <div class="calendar_area">
+            <div class="month">
+              <i class="fas fa-angle-left prev"><</i>
+              <div class="date">
+                <h1 class="date_month"></h1>
+                <p></p>
+              </div>
+              <i class="fas fa-angle-right next">></i>
+            </div>
+            <div class="weekdays">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="days">
+          </div>
+        </div>
+      </div>
+
+
       </div>
 
       <div class="list_friends">
@@ -43,5 +73,7 @@
     </div>
   </div>
 </div>
+
+<script src="{% static 'goals/goals_home_calendar.js' %}" charset="utf-8"></script>
 
 {% endblock content %}

@@ -7,6 +7,82 @@
 {% endblock title %}
 
 {% block content %}
+
+{% if page == "add" %}
 <h1>Add goal</h1>
+
+<div class="container">
+
+  <form action="" method="POST" class="goal_add_form">
+    {% csrf_token %}
+    {{form.name.name}}
+    {{form.name}}
+    <br>
+    {{form.priority.name}}
+    {{form.priority}}
+    <span id="test4_result"></span>
+    <br>
+    {{form.description.name}}
+    {{form.description}}
+    <br>
+    {{form.deadline.name}}
+    {{form.deadline}}
+    <br>
+    <input type="submit" name="goal_add" value="Add"/>
+  </form>
+</div>
+
+{% elif page == "edit" %}
+
+<h1>{{goal.name}}</h1>
+
+  <form action="" method="POST" class="goal_add_form">
+    {% csrf_token %}
+    {{form.name.name}}
+    {{form.name}}
+    <br>
+    {{form.priority.name}}
+    {{form.priority}}
+    <span id="test4_result"></span>
+    <br>
+    {{form.description.name}}
+    {{form.description}}
+    <br>
+    {{form.deadline.name}}
+    {{form.deadline}}
+    <br>
+    <input type="submit" name="goal_edit" value="Change"/>
+  </form>
+</div>
+
+
+{% endif %}
+
+    <!-- <select></select> -->
+    <!-- <input type="button">
+    <br>
+    <input type="checkbox">
+    <br>
+    <input type="color">
+    <br>
+    <input type="date">
+    <br>
+    <input type="email">
+    <br>
+    <input type="password">
+    <br>
+    <input type="radio">
+    <br>
+    <input type="range">
+    <br>
+    <input type="submit">> -->
+
+<script>
+  var slider = document.querySelector(".test4")
+  var result = document.getElementById('test4_result')
+  slider.oninput = function() {
+    result.textContent = this.value;
+  }
+</script>
 
 {% endblock content %}
