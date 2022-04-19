@@ -6,10 +6,11 @@ from .forms import GoalForm
 # Create your views here.
 
 def goals_home(request):
+    testing = "test"
     goals = Goal.objects.all()
 
 
-    context = {'goals': goals,}
+    context = {'goals': goals, 'testing': testing}
     return render(request, 'goals/goals_home.html', context)
 
 def goals_add(request):

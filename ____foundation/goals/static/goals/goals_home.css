@@ -9,15 +9,15 @@ h1 {
 }
 
 .list_goals {
-  flex-basis: 20%;
+  flex-basis: 15%;
 }
 
 .calendar {
-  flex-basis: 60%;
+  flex-basis: 75%;
 }
 
 .list_friends {
-  flex-basis: 20%;
+  flex-basis: 10%;
 }
 
 /* list_goals ################# */
@@ -115,8 +115,9 @@ h1 {
 }
 
 .days div {
-  margin: 1rem 0 ;
-  width: 14.286%;
+  padding: 1rem 0 ;
+  flex-basis: 14.286%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

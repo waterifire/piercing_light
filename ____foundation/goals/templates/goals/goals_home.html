@@ -74,6 +74,13 @@
   </div>
 </div>
 
-<script src="{% static 'goals/goals_home_calendar.js' %}" charset="utf-8"></script>
 
+<script>
+  const goalList = {}
+  {% for goal in goals %}
+    goalList[`{{goal}}`] = `{{goal.deadline}}`
+  {% endfor %}
+</script>
+
+<script src="{% static 'goals/goals_home_calendar.js' %}" charset="utf-8"></script>
 {% endblock content %}
