@@ -109,8 +109,10 @@ h1 {
 
 .days {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* flex-wrap: wrap; */
+  /* text-align: center; */
   padding: 0.2rem;
 }
 
@@ -119,9 +121,11 @@ h1 {
   flex-basis: 14.286%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
   align-items: center;
   transition: background-color 0.5s ease;
+  line-height: 0.1rem;
 }
 
 .days div:hover:not(.today) {
@@ -134,5 +138,7 @@ h1 {
 }
 
 .today {
-  background-color: #167e56;
+  color: yellow;
 }
+
+/* calendar - my changes ############ */

@@ -46,40 +46,64 @@ const renderCalendar = () => {
 
   }
 
-  checkedDays = []
+  let daysDict = {}
+  let checkedDays = []
   const monthDays = document.querySelector('.days')
   for(let i = 1; i<= lastDayDate; i++) {
+      daysDict[i] += `<div class="day-block">`
+      daysDict[i] = daysDict[i].replace('undefined', '')
     if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
-      days += `<div class="today">${i}</div>`;
+      // days += `<div class="today">${i}</div>`;
+      daysDict[i] += `<div class="today">${i}</div>`;
+      daysDict[i] = daysDict[i].replace('undefined', '')
       checkedDays.push(i)
     } else {
-      days += `<div>${i}</div>`
+      // days += `<div class="day${i}">${i}</div>`
       checkedDays.push(i)
+      for (var key in goalList) {
+        if (goalList.hasOwnProperty(key)) {
+
+          // console.log(key + " - > " + goalList[key])
+          var specificDate = goalList[key].split(' ')
+          var specificYear = specificDate[2]
+          var specificMonth = specificDate[0]
+          var specificDay = specificDate[1].replace(/,\s*$/, "")  // Regular expression. Remove , and whitespace at end
+          var specificEvent = key
+          if (i === parseInt(specificDay) &&
+          date.getFullYear() === parseInt(specificYear) &&
+          months[date.getMonth()] === specificMonth) {
+            // days += `<div class="day${i} event_${specificEvent}">Deadline</div>`
+            daysDict[i] += `<div class="day${i} event">${specificEvent}</div>`
+            daysDict[i] = daysDict[i].replace('undefined', '')
+            checkedDays.push(i)
+          }
+        }
+      }
+      // days += `<div class="day${i}">${i}</div>`
+      if (i in daysDict) {
+      daysDict[i] += `<div class="day${i}">${i}</div>`
+      daysDict[i] = daysDict[i].replace('undefined', '')
+      } else {
+        daysDict[i] += `<div class="day${i}">${i}</div>`
+        daysDict[i] = daysDict[i].replace('undefined', '')
+      }
     }
+    daysDict[i] += `</div>`
+    daysDict[i] = daysDict[i].replace('undefined', '')
   }
 
   for(let j=1; j<=nextDays; j++) {
     days += `<div class="next-date">${j}</div>`
+  }
+    // console.log(monthDays)
+    // console.log(days)
+    // console.log(daysDict)
+    for (var key in daysDict) {
+      // console.log(daysDict[key])
+      days += daysDict[key]
     }
     monthDays.innerHTML = days;
 
-
-// Django here ################################
-    const checkedMonth = months[month_number_in_months]
-    for (var key in goalList) {
-      if (goalList.hasOwnProperty(key)) {
-
-        // console.log(key + " - > " + goalList[key])
-        var split = goalList[key].split(' ')
-        var specificDay = split[1].replace(/,\s*$/, "")  // Regular expression. Remove , and whitespace at end
-        // console.log(typeof(specificDay))
-        // console.log(typeof(checkedDays[1]))
-        // console.log(checkedDays)
-        if (checkedDays.includes(parseInt(specificDay))) {
-          console.log('Yes')
-        }
-      }
-    }
   }  // renderCalendar function ends here #######################
 
 
@@ -98,3 +122,5 @@ const renderCalendar = () => {
 })
 
 renderCalendar()
+
+console.log(goalList)
