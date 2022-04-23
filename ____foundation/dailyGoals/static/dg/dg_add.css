@@ -1,3 +1,14 @@
 h1 {
   text-align: center;
 }
+
+.goal_area {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f0f0f0;
+}
+
+.edit-goal {
+  background-color: #000;
+  color: white;
+}

@@ -10,21 +10,57 @@
 
 <h1>Daily Goals home</h1>
 
-<a href="{% url 'dg_add' %}" class="add_goal_link">
-  <div class="add_goal">
+<div class="add_area">
+  <a href="{% url 'dg_add' %}" class="add_goal_link">
+    <div class="add_goal">
       Add a goal
-  </div>
-</a>
+    </div>
+  </a>
+  <a href="{% url 'dn_add' %}" class="add_note_link">
+    <div class="add_note">
+      Add a note
+    </div>
+  </a>
+</div>
 
 <div class="goals_zone">
   <div class="container">
     <div class="goals_area">
       {% for goal in goals %}
-        <div class="goals">
-          {{goal.name}}
+        <div class="goals" id="goal--{{goal.name}}">
+          <div class="goal_name" id="goal_name_{{goal.name}}">
+            {{goal.name}}
+          </div>
+          <div class="options">
+            <p class="edit">Edit</p>
+            <form action="" method="POST">
+              {% csrf_token %}
+              <!-- <p class="remove">Remove</p> -->
+              <input type="submit" name="remove_{{goal.name}}" value="remove">
+            </form>
+          </div>
+        </div>
+        <div class="goals goals_form form_hide" id="form--{{goal.name}}">
+          <form action="" method="POST">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" name="{{goal.name}}" value="Update">
+            <button type="button" name="cancel" class="btnCancel">Cancel</button>
+          </form>
         </div>
       {% endfor %}
     </div>
   </div>
 </div>
+<script>
+
+  const goalList = []
+
+  {% for goal in goals %}
+    goalList.push("{{goal}}")
+  {% endfor %}
+</script>
+
+<script src="{% static 'dg/dg_home.js' %}" charset="utf-8"></script>
+
 {% endblock content %}

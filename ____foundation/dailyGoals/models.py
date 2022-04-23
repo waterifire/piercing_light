@@ -12,7 +12,7 @@ class DailyGoal(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.user} - {self.name}"
+        return self.name
 
 
 class Note(models.Model):
@@ -24,4 +24,4 @@ class Note(models.Model):
     modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.user} - {self.name}"
+        return self.name

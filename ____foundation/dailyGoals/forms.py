@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import DailyGoal
+from .models import DailyGoal, Note
 
 # forms below
 
@@ -10,6 +10,11 @@ class DailyGoalForm(forms.ModelForm):
         fields = "__all__"
 
 
-    widgets = {
-     # 'name': forms.CharField(attrs={'class': 'works'})
-    }
+        widgets = {
+         'name': forms.TextInput(attrs={'class': 'goal-edit'})
+        }
+
+class NoteForm(forms.ModelForm):
+    class Meta:
+        model = Note
+        fields = "__all__"

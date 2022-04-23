@@ -11,11 +11,15 @@
 <h1>Daily Goals add</h1>
 
 <div class="container">
-
-  <form action="" method="POST" class="add_goal">
-    {% csrf_token %}
-    {{form}}
-  </form>
+  <div class="goal_area">
+    <form action="" method="POST" class="add_goal">
+      {% csrf_token %}
+      {{form}}
+      <!-- {{form.name.name}}
+      {{form.name}} -->
+      <input type="submit" value="Add" name="dg_add">
+    </form>
+  </div>
 </div>
 
 {% endblock content %}
