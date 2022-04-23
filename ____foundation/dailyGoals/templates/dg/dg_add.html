@@ -10,4 +10,12 @@
 
 <h1>Daily Goals add</h1>
 
+<div class="container">
+
+  <form action="" method="POST" class="add_goal">
+    {% csrf_token %}
+    {{form}}
+  </form>
+</div>
+
 {% endblock content %}

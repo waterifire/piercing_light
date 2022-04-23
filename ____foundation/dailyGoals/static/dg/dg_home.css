@@ -1,3 +1,37 @@
 h1 {
   text-align: center;
 }
+
+.add_goal {
+  text-align: center;
+  padding: 0.2rem;
+  background: AntiqueWhite;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add_goal:hover {
+  background-color: lightgreen;
+}
+
+.add_goal_link:active > .add_goal {
+  background-color: lightblue;
+}
+
+
+.goals_area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.goals {
+  flex-basis: 19.8%;  /* margin gets 0.2% */
+  margin: 0.1%;
+  min-height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+}

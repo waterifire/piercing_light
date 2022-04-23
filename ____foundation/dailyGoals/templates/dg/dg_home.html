@@ -9,5 +9,22 @@
 {% block content %}
 
 <h1>Daily Goals home</h1>
-<a href="{% url 'dg_add' %}">Add a goal</a>
+
+<a href="{% url 'dg_add' %}" class="add_goal_link">
+  <div class="add_goal">
+      Add a goal
+  </div>
+</a>
+
+<div class="goals_zone">
+  <div class="container">
+    <div class="goals_area">
+      {% for goal in goals %}
+        <div class="goals">
+          {{goal.name}}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock content %}
