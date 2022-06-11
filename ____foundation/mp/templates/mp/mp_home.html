@@ -1,0 +1,47 @@
+{% extends 'basic1.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'mp/mp_home.css' %}">
+<title>Memory Palace Home</title>
+{% endblock title %}
+
+{% block content %}
+
+<a href="{% url 'mp_word' %}">Word Zone</a>
+
+<div class="vc_zone">
+    <div class="container">
+        <div class="vc_area">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" name="verse_add" value="Add" class="btn">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="vl_zone">
+    <div class="container">
+        <div class="vl_area">
+            <ul>
+                {% for verse in verses %}
+                <li>
+                    <a href="{% url 'mp_detail' verse.id %}">
+                        {{verse.shown_title}}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}
+

@@ -65,7 +65,7 @@ h1 {
 .choice_place:nth-child(3) {
   border-top-right-radius: 2rem;
 }
-.choice_place:nth-child(7) {
+.choice_place:nth-child(10) {
   border-bottom-left-radius: 2rem;
 }
 .choice_place:last-child {

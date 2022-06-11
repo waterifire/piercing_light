@@ -1,0 +1,62 @@
+{% extends 'basic1.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'mp/mp_word.css' %}">
+<title>Word Zone</title>
+{% endblock title %}
+
+{% block content %}
+
+<h1>Word Zone</h1>
+
+
+<div class="word_zone">
+    <div class="container">
+        <div class="word_place">
+            <div class="word_title_place">
+                <h3>Word</h3>
+                <h3>Description</h3>
+                <h3>More Detail</h3>
+            </div>
+            {% for word in words %}
+            <div class="word_area">
+                <form class="form" action="" method="POST">
+                    {% csrf_token %}
+                    <div class="word guide">
+                        <p>{{word.name}}</p>
+                        <button class='btn' name='word'>+</button>
+                    </div>
+                    <div class="hide_me word_edit">
+                        {{form.word}}
+                        <input type="submit" name="word_edit" value="Update">
+                    </div>
+                    <div class="description guide">
+                        <p>{{word.description}}</p>
+                        <button class="btn" name="description"> +</button>
+                    </div>
+                    <div class="hide_me description_edit">
+                        {{form.description}}
+                        <input type="submit" name="description_edit" value="Update">
+                    </div>
+                    <div class="detailed guide">
+                        <p>{{word.detailed}}</p>
+                        <button class="btn" name="detailed"> + </button>
+                    </div>
+                    <div class="hide_me detailed_edit">
+                        {{form.detailed}}
+                        <input type="submit" name="detailed_edit" value="Update">
+                    </div>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Will make a page where I can fill in words
+    words are generated on verse (home page)
+    fill in details here
+    or create new words here -->
+
+{% endblock content %}

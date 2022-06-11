@@ -1,0 +1,50 @@
+h1 {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: lightblue;
+}
+
+.hide_me {
+    display: none;
+}
+
+.word_title_place {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.word_title_place > * {
+    flex-basis: 33.3333%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.form > * {
+    flex-basis: 33.3333%
+}
+
+.guide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.guide p   {
+    padding-left: 1rem;
+    flex-basis: 90%;
+}
+.guide.btn {
+    flex-basis: 10%;
+}
+
+
+

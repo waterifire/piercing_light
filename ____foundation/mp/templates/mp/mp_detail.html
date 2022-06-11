@@ -1,0 +1,51 @@
+{% extends 'basic1.html' %}
+{% load static %}
+
+{% block title %}
+<link rel="stylesheet" href="{% static 'mp/mp_detail.css' %}">
+<title>Verse: {{verse}}</title>
+{% endblock %}
+
+{% block content %}
+
+
+<h1>{{verse.shown_title}}</h1>
+
+
+<div class="verse_zone">
+    <div class="container">
+        <div class="verse">
+            {{verse.verse}}
+        </div>
+        <div class="hide_me verse_mp">
+            {{verse.mp_verse}}
+        </div>
+    </div>
+</div>
+
+<div class="word_zone">
+    <div class="container">
+        <div class="word_area">
+            <div class="word_title">
+                <p>Word</p>
+            </div>
+            <div class="description_title">
+                <p>Description</p>
+            </div>
+
+            {% for word in choosen_words %}
+            <div class="word_place">
+                <div class="word">
+                    {{word}}
+                </div>
+                <div class="description">
+                    {{word.description}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

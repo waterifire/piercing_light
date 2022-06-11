@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+}
+
+.hide_me {
+    display: none;
+}
+
+.word_zone {
+    margin-top: 2rem;
+}
+
+.word_area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.word_title {
+    flex-basis: 20%;
+    text-align: center;
+}
+
+.description_title {
+    flex-basis: 80%;
+    text-align: center;
+}
+
+.word_place {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+.word_place:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+.word {
+    flex-basis: 20%;
+}
+
+.description {
+    flex-basis: 80%;
+}

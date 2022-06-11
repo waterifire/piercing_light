@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+}
+
+.vl_zone {
+    margin: 1rem 0;
+}
+
+.vc_area,
+.vl_area {
+}
+
+.title_input {
+    width: 50%;
+    display: block;
+}
+
+.btn {
+    margin: 1rem 0;
+}
+
+.vc_area {
+    padding: 1rem 0.5rem;
+    color: #fff;
+    text-shadow: 0.2rem 0.2rem 0.2rem #fff;
+}
+
+.vc_area {
+    margin-top: -1rem;
+    padding: 1rem 0.5rem;
+}
+
+
+.verse_input,
+.title_input {
+    width: 100%;
+}
+
+.vl_area {
+}
